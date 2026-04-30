@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
+<html lang="zh-CN">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>广西桂西自驾8日游攻略（最终版）</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- 已嵌入你的新API Key（1c4dee63d2aa0001d7c2ea4ce7d47e6e），权限正常 -->
-    <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=1c4dee63d2aa0001d7c2ea4ce7d47e6e"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -29,12 +27,12 @@
             .content-auto { content-visibility: auto; }
             .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
             .card-shadow { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-            .map-height { height: 220px; } /* 手机端最佳地图高度，单手可操作 */
+            .map-height { height: 220px; }
         }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
-    <!-- 顶部导航（固定悬浮，手机滑动不消失） -->
+    <!-- 顶部导航 -->
     <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 shadow-sm">
         <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
             <h1 class="font-bold text-primary text-lg">桂西自驾攻略</h1>
@@ -44,14 +42,13 @@
         </div>
     </nav>
 
-    <!-- 封面图（适配手机屏幕比例） -->
+    <!-- 封面图 -->
     <header class="pt-14">
         <div class="relative h-64 md:h-80 overflow-hidden">
             <img src="https://aka.doubaocdn.com/s/48Ru1wKvTf" alt="广西山水" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
                 <h2 class="text-2xl md:text-3xl font-bold text-shadow mb-2">广西桂西自驾8日游</h2>
-                <p class="text-white/90 text-shadow text-sm">喀斯特秘境+少数民族文化</p>
                 <div class="flex items-center mt-3 text-xs">
                     <i class="fa fa-calendar-o mr-2"></i>
                     <span>2026.05.01 - 2026.05.08</span>
@@ -64,23 +61,20 @@
     </header>
 
     <main class="max-w-3xl mx-auto px-4 py-6">
-        <!-- 行程概览（含总路线地图） -->
+        <!-- 行程概览 -->
         <section id="overview" class="mb-8 scroll-mt-16">
             <h3 class="text-xl font-bold mb-4 flex items-center">
                 <i class="fa fa-map-o text-primary mr-2"></i>
                 行程概览
             </h3>
             <div class="bg-white rounded-2xl card-shadow p-5">
-                <!-- 总路线地图（含加载容错） -->
-                <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="totalRouteMap">
-                    <div class="text-center text-gray-500 text-sm" id="totalMapTip">
-                        <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
-                    </div>
-                </div>
+                <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=hand%20drawn%20style%20illustration%20map%20of%20Guangxi%20China%20with%20Guilin%20Sanjiang%20Luocheng%20Fengshan%20Leye%20Jingxi%20Nanning%20marked%20with%20red%20dotted%20route%20and%20cute%20landmarks%20mountains%20rivers%20traditional%20buildings%20watercolor%20style%20vintage%20paper%20background&image_size=landscape_16_9" alt="广西桂西自驾游路线图" class="w-full h-auto max-h-[180px] object-contain rounded-xl mb-4"/>
                 <div class="flex flex-wrap gap-3 mb-4">
                     <div class="flex-1 min-w-[120px]">
                         <p class="text-xs text-gray-500 mb-1">路线</p>
-                        <p class="text-sm font-medium">桂林→三江→罗城→凤山→乐业→靖西→南宁</p>
+                        <a href="https://uri.amap.com/navigation?to=110.287478,25.28024,桂林&via=109.56432,25.73158,三江;109.07421,25.09836,罗城;107.02457,24.55689,凤山;106.56872,24.74135,乐业;106.42763,23.13457,靖西;108.31664,22.82403,南宁&callnative=1&src=桂西自驾攻略" class="text-sm font-medium text-primary hover:underline" target="_blank">
+                            桂林→三江→罗城→凤山→乐业→靖西→南宁
+                        </a>
                     </div>
                     <div class="flex-1 min-w-[120px]">
                         <p class="text-xs text-gray-500 mb-1">错峰提示</p>
@@ -90,14 +84,14 @@
             </div>
         </section>
 
-        <!-- 每日行程（含当日路线+住宿定位+景点攻略） -->
+        <!-- 每日行程 -->
         <section id="itinerary" class="mb-8 scroll-mt-16">
             <h3 class="text-xl font-bold mb-4 flex items-center">
                 <i class="fa fa-list-alt text-primary mr-2"></i>
                 每日行程
             </h3>
 
-            <!-- D0：上海→桂林（交通日） -->
+            <!-- D0：上海→桂林 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D0</span>
@@ -110,35 +104,33 @@
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-subway text-accent mr-1"></i> 交通提示</p>
                             <p class="text-sm">抵达桂林后，建议先到租车点取车（推荐桂林两江机场/桂林站附近门店），导航至住宿点</p>
-                            <a href="https://uri.amap.com/navigation?to=110.293197,25.27922,桂林站租车点&callnative=1&src=桂西自驾攻略" 
-                               class="text-xs text-primary mt-1 inline-block" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=110.293197,25.27922,桂林站租车点&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mt-1 inline-block" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>点击导航至桂林热门租车点
                             </a>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/navigation?to=110.287478,25.28024,桂林两江四湖周边酒店&callnative=1&src=桂西自驾攻略" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=110.287478,25.28024,桂林两江四湖周边酒店&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>桂林两江四湖周边酒店（近景点）
                             </a>
                         </div>
                         <!-- 美食 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
                             <p class="text-sm">早餐：崇善米粉（总店）| 晚餐：谢大姐啤酒鱼（叠翠路店）</p>
-                            <a href="https://m.dianping.com/search/category/桂林/美食/崇善米粉" class="text-xs text-secondary mr-2" target="_blank">
-                                <i class="fa fa-search mr-1"></i>崇善米粉
+                            <a href="https://www.xiaohongshu.com/search?keyword=桂林崇善米粉" class="text-xs text-secondary mr-2" target="_blank">
+                                <i class="fa fa-link mr-1"></i>崇善米粉
                             </a>
-                            <a href="https://m.dianping.com/search/category/桂林/美食/谢大姐啤酒鱼" class="text-xs text-secondary" target="_blank">
-                                <i class="fa fa-search mr-1"></i>谢大姐啤酒鱼
+                            <a href="https://www.xiaohongshu.com/search?keyword=桂林谢大姐啤酒鱼" class="text-xs text-secondary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>谢大姐啤酒鱼
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- D1：桂林市区（0km） -->
+            <!-- D1：桂林市区 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D1</span>
@@ -146,32 +138,38 @@
                     <span class="ml-auto text-xs text-gray-500">0km</span>
                 </div>
                 <div class="p-5">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day1Map">
-                        <div class="text-center text-gray-500 text-sm" id="day1MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=110.28673,25.27891,两江四湖&via=110.28845,25.27936,东西巷&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center hover:from-green-100 hover:to-green-200 transition-colors" target="_blank">
+                        <div class="text-center text-secondary">
+                            <i class="fa fa-map-signs fa-3x mb-2"></i>
+                            <p class="font-medium">点击跳转当日路线</p>
+                            <p class="text-xs mt-1">自动规划：东西巷→两江四湖</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <div class="space-y-2">
                                 <p class="text-sm font-medium">1. 东西巷</p>
-                                <a href="https://www.xiaohongshu.com/search?q=桂林东西巷游玩攻略&page=1" class="text-xs text-primary" target="_blank">
-                                    <i class="fa fa-link mr-1"></i>小红书：东西巷拍照+美食攻略
+                                <a href="https://uri.amap.com/navigation?to=110.28845,25.27936,桂林东西巷&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                    <i class="fa fa-map-marker mr-1"></i>导航前往
+                                </a>
+                                <a href="https://www.xiaohongshu.com/search?keyword=桂林东西巷" class="text-xs text-primary" target="_blank">
+                                    <i class="fa fa-link mr-1"></i>小红书攻略
                                 </a>
                                 <p class="text-sm font-medium mt-2">2. 两江四湖夜景（可替换：象鼻山公园）</p>
-                                <a href="https://www.xiaohongshu.com/search?q=桂林两江四湖夜景攻略&page=1" class="text-xs text-primary" target="_blank">
-                                    <i class="fa fa-link mr-1"></i>小红书：两江四湖游船+夜景最佳观赏点
+                                <a href="https://uri.amap.com/navigation?to=110.28321,25.27658,桂林两江四湖&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                    <i class="fa fa-map-marker mr-1"></i>导航前往
+                                </a>
+                                <a href="https://www.xiaohongshu.com/search?keyword=桂林两江四湖夜景" class="text-xs text-primary" target="_blank">
+                                    <i class="fa fa-link mr-1"></i>小红书攻略
                                 </a>
                             </div>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/navigation?to=110.28673,25.27891,两江四湖附近酒店&callnative=1&src=桂西自驾攻略" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=110.28673,25.27891,两江四湖附近酒店&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>两江四湖附近酒店（步行可达景点）
                             </a>
                         </div>
@@ -179,7 +177,7 @@
                 </div>
             </div>
 
-            <!-- D2：桂林→三江（130km/1h） -->
+            <!-- D2：桂林→三江 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D2</span>
@@ -188,43 +186,46 @@
                 </div>
                 <div class="p-5">
                     <img src="https://p3-search.byteimg.com/obj/labis/d90a39d9ad335d945658b258f4e2c6fe" alt="程阳八寨" class="w-full h-48 object-cover rounded-xl mb-4">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day2Map">
-                        <div class="text-center text-gray-500 text-sm" id="day2MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=109.56432,25.73158,三江程阳八寨&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center hover:from-orange-100 hover:to-orange-200 transition-colors" target="_blank">
+                        <div class="text-center text-orange-600">
+                            <i class="fa fa-road fa-3x mb-2"></i>
+                            <p class="font-medium">点击导航到程阳八寨</p>
+                            <p class="text-xs mt-1">从桂林出发全程约130km</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <p class="text-sm">程阳八寨（侗寨古楼+永济桥）、三江风雨桥</p>
-                            <a href="https://www.xiaohongshu.com/search?q=三江程阳八寨游玩攻略&page=1" class="text-xs text-primary mt-1 inline-block" target="_blank">
-                                <i class="fa fa-link mr-1"></i>小红书：程阳八寨深度游+侗族文化体验
+                            <a href="https://uri.amap.com/navigation?to=109.56432,25.73158,三江程阳八寨&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                <i class="fa fa-map-marker mr-1"></i>导航前往
+                            </a>
+                            <a href="https://www.xiaohongshu.com/search?keyword=三江程阳八寨" class="text-xs text-primary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书攻略
                             </a>
                             <p class="text-xs text-amber-600 mt-1">🎫 门票90元（提前在美团/大众点评预定）</p>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/navigation?to=109.56432,25.73158,三江程阳八寨茶园观寨民宿&callnative=1&src=桂西自驾攻略" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=109.56432,25.73158,三江程阳八寨茶园观寨民宿&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>三江茶园观寨民宿（程阳八寨内，近景点）
                             </a>
                         </div>
                         <!-- 美食 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
                             <p class="text-sm">侗家风味馆（程阳八寨内）：侗家酸鱼、三江油茶</p>
-                            <a href="https://m.dianping.com/search/category/三江/美食/侗家风味馆" class="text-xs text-secondary" target="_blank">
-                                <i class="fa fa-search mr-1"></i>大众点评找侗家风味馆
+                            <a href="https://www.xiaohongshu.com/search?keyword=三江程阳八寨美食" class="text-xs text-secondary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书找美食
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- D3：三江→罗城（181km/2h） -->
+            <!-- D3：三江→罗城 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D3</span>
@@ -233,39 +234,45 @@
                 </div>
                 <div class="p-5">
                     <img src="https://aka.doubaocdn.com/s/xVpq1wKvTX" alt="武阳江泛舟" class="w-full h-48 object-cover rounded-xl mb-4">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day3Map">
-                        <div class="text-center text-gray-500 text-sm" id="day3MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=109.07421,25.09836,罗城崖宜古村&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-cyan-50 to-cyan-100 flex items-center justify-center hover:from-cyan-100 hover:to-cyan-200 transition-colors" target="_blank">
+                        <div class="text-center text-cyan-600">
+                            <i class="fa fa-ship fa-3x mb-2"></i>
+                            <p class="font-medium">点击导航到罗城</p>
+                            <p class="text-xs mt-1">从三江出发全程约181km</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <p class="text-sm">武阳江泛舟、石围古村、仫佬族博物馆（可选：下枧河景区）</p>
-                            <a href="https://www.xiaohongshu.com/search?q=罗城武阳江泛舟攻略&page=1" class="text-xs text-primary mt-1 inline-block" target="_blank">
-                                <i class="fa fa-link mr-1"></i>小红书：武阳江泛舟路线+拍照技巧
+                            <a href="https://uri.amap.com/navigation?to=109.07421,25.09836,罗城武阳江&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                <i class="fa fa-map-marker mr-1"></i>导航前往
+                            </a>
+                            <a href="https://www.xiaohongshu.com/search?keyword=罗城武阳江" class="text-xs text-primary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书攻略
                             </a>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/navigation?to=109.07421,25.09836,罗城崖宜古村语村宿三尖堂&callnative=1&src=桂西自驾攻略" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=109.07421,25.09836,罗城崖宜古村语村宿三尖堂&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>罗城村语村宿三尖堂（崖宜古村内，不可取消）
                             </a>
                         </div>
                         <!-- 美食 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
                             <p class="text-sm">罗城滤粉老店：滤粉（肉末+酸菜）| 仫佬族白切鸡专门店：白切鸡</p>
+                            <a href="https://www.xiaohongshu.com/search?keyword=罗城滤粉" class="text-xs text-secondary mr-2" target="_blank">
+                                <i class="fa fa-link mr-1"></i>罗城滤粉
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- D4：罗城→凤山（246km/3h） -->
+            <!-- D4：罗城→凤山 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D4</span>
@@ -274,43 +281,46 @@
                 </div>
                 <div class="p-5">
                     <img src="https://aka.doubaocdn.com/s/qWFq1wKvTk" alt="棉花天坑" class="w-full h-48 object-cover rounded-xl mb-4">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day4Map">
-                        <div class="text-center text-gray-500 text-sm" id="day4MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=107.02457,24.55689,凤山棉花天坑&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center hover:from-purple-100 hover:to-purple-200 transition-colors" target="_blank">
+                        <div class="text-center text-purple-600">
+                            <i class="fa fa-circle-o fa-3x mb-2"></i>
+                            <p class="font-medium">点击导航到棉花天坑</p>
+                            <p class="text-xs mt-1">从罗城出发全程约246km</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <p class="text-sm">棉花天坑悬崖书店</p>
-                            <a href="https://www.xiaohongshu.com/search?q=凤山棉花天坑攻略&page=1" class="text-xs text-primary mt-1 inline-block" target="_blank">
-                                <i class="fa fa-link mr-1"></i>小红书：棉花天坑悬崖书店打卡+拍照攻略
+                            <a href="https://uri.amap.com/navigation?to=107.02457,24.55689,凤山棉花天坑&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                <i class="fa fa-map-marker mr-1"></i>导航前往
+                            </a>
+                            <a href="https://www.xiaohongshu.com/search?keyword=凤山棉花天坑悬崖书店" class="text-xs text-primary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书攻略
                             </a>
                             <p class="text-xs text-amber-600 mt-1">🎫 门票80元/118元套票（提前预定）</p>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/navigation?to=107.02457,24.55689,凤山县柏曼酒店&callnative=1&src=桂西自驾攻略" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=107.02457,24.55689,凤山县柏曼酒店&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>凤山县柏曼酒店（县城中心，近餐饮）
                             </a>
                         </div>
                         <!-- 美食 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
                             <p class="text-sm">凤山猪脚粉店：猪脚粉、巴马香猪</p>
-                            <a href="https://m.dianping.com/search/category/凤山/美食/猪脚粉" class="text-xs text-secondary" target="_blank">
-                                <i class="fa fa-search mr-1"></i>大众点评找猪脚粉
+                            <a href="https://www.xiaohongshu.com/search?keyword=凤山美食" class="text-xs text-secondary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>凤山美食
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- D5：凤山→乐业（119km山路/3h） -->
+            <!-- D5：凤山→乐业 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D5</span>
@@ -319,43 +329,46 @@
                 </div>
                 <div class="p-5">
                     <img src="https://aka.doubaocdn.com/s/5eVN1wKvTH" alt="三门海水上天坑" class="w-full h-48 object-cover rounded-xl mb-4">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day5Map">
-                        <div class="text-center text-gray-500 text-sm" id="day5MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=106.56872,24.74135,乐业观澜国际度假酒店&via=107.02457,24.55689,凤山三门海&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center hover:from-teal-100 hover:to-teal-200 transition-colors" target="_blank">
+                        <div class="text-center text-teal-600">
+                            <i class="fa fa-tint fa-3x mb-2"></i>
+                            <p class="font-medium">点击跳转当日路线</p>
+                            <p class="text-xs mt-1">先到三门海，再去乐业</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <p class="text-sm">三门海（8-10点光线最佳）、南丹洞天酒海（可选：百鸟岩）</p>
-                            <a href="https://www.xiaohongshu.com/search?q=凤山三门海游玩攻略&page=1" class="text-xs text-primary mt-1 inline-block" target="_blank">
-                                <i class="fa fa-link mr-1"></i>小红书：三门海天窗游览+抢票技巧
+                            <a href="https://uri.amap.com/navigation?to=107.02457,24.55689,凤山三门海&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                <i class="fa fa-map-marker mr-1"></i>导航去三门海
                             </a>
-                            <p class="text-xs text-amber-600 mt-1">⚠️ 三门海门票提前3天抢（微信公众号“凤山旅游”），避免夜间走盘山公路</p>
+                            <a href="https://www.xiaohongshu.com/search?keyword=凤山三门海" class="text-xs text-primary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书攻略
+                            </a>
+                            <p class="text-xs text-amber-600 mt-1">⚠️ 三门海门票提前3天抢（微信公众号"凤山旅游"），避免夜间走盘山公路</p>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/navigation?to=106.56872,24.74135,乐业观澜国际度假酒店&callnative=1&src=桂西自驾攻略" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=106.56872,24.74135,乐业观澜国际度假酒店&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>乐业观澜国际度假酒店（近大石围天坑）
                             </a>
                         </div>
                         <!-- 美食 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
                             <p class="text-sm">雅长野生鱼馆：酸汤牛肉、野生菌汤</p>
-                            <a href="https://m.dianping.com/search/category/乐业/美食/野生鱼" class="text-xs text-secondary" target="_blank">
-                                <i class="fa fa-search mr-1"></i>大众点评找野生鱼馆
+                            <a href="https://www.xiaohongshu.com/search?keyword=乐业美食" class="text-xs text-secondary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>乐业美食
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- D6：乐业大石围天坑（休闲日） -->
+            <!-- D6：乐业大石围天坑 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D6</span>
@@ -364,43 +377,46 @@
                 </div>
                 <div class="p-5">
                     <img src="https://aka.doubaocdn.com/s/Mljo1wKvTM" alt="乐业大石围天坑" class="w-full h-48 object-cover rounded-xl mb-4">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day6Map">
-                        <div class="text-center text-gray-500 text-sm" id="day6MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=106.57015,24.74328,乐业大石围天坑&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center hover:from-gray-100 hover:to-gray-200 transition-colors" target="_blank">
+                        <div class="text-center text-gray-600">
+                            <i class="fa fa-arrow-down fa-3x mb-2"></i>
+                            <p class="font-medium">点击导航到大石围天坑</p>
+                            <p class="text-xs mt-1">休闲日：体验天坑速降</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <p class="text-sm">大石围天坑（12-14点丁达尔效应明显）、天坑速降（可选：罗妹莲花洞）</p>
-                            <a href="https://www.xiaohongshu.com/search?q=乐业大石围天坑速降攻略&page=1" class="text-xs text-primary mt-1 inline-block" target="_blank">
-                                <i class="fa fa-link mr-1"></i>小红书：大石围天坑速降预约+坑底探游指南
+                            <a href="https://uri.amap.com/navigation?to=106.57015,24.74328,乐业大石围天坑&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                <i class="fa fa-map-marker mr-1"></i>导航前往
+                            </a>
+                            <a href="https://www.xiaohongshu.com/search?keyword=乐业大石围天坑速降" class="text-xs text-primary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书攻略
                             </a>
                             <p class="text-xs text-amber-600 mt-1">⚠️ 速降提前1天预约，50米速降+坑底探游480元/2h</p>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/navigation?to=106.57015,24.74328,乐业1466帐篷营地&callnative=1&src=桂西自驾攻略" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=106.57015,24.74328,乐业1466帐篷营地&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>乐业1466帐篷营地（已定，待现场付）
                             </a>
                         </div>
                         <!-- 美食 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
                             <p class="text-sm">当地农家乐：芒果、烤猪眼（按需选择）</p>
-                            <a href="https://m.dianping.com/search/category/乐业/美食/农家乐" class="text-xs text-secondary" target="_blank">
-                                <i class="fa fa-search mr-1"></i>大众点评找农家乐
+                            <a href="https://www.xiaohongshu.com/search?keyword=乐业农家乐" class="text-xs text-secondary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>找农家乐
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- D7：乐业→靖西（274km/3h） -->
+            <!-- D7：乐业→靖西 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D7</span>
@@ -409,45 +425,48 @@
                 </div>
                 <div class="p-5">
                     <img src="https://aka.doubaocdn.com/s/cttb1wKvTf" alt="浩坤湖" class="w-full h-48 object-cover rounded-xl mb-4">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day7Map">
-                        <div class="text-center text-gray-500 text-sm" id="day7MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=106.42763,23.13457,靖西浩坤湖&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center hover:from-emerald-100 hover:to-emerald-200 transition-colors" target="_blank">
+                        <div class="text-center text-emerald-600">
+                            <i class="fa fa-water fa-3x mb-2"></i>
+                            <p class="font-medium">点击导航到浩坤湖</p>
+                            <p class="text-xs mt-1">从乐业出发全程约274km</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <p class="text-sm">浩坤湖（推荐日落）、锦绣古镇（绣球之乡）</p>
-                            <a href="https://www.xiaohongshu.com/search?q=靖西浩坤湖环湖攻略&page=1" class="text-xs text-primary mt-1 inline-block" target="_blank">
-                                <i class="fa fa-link mr-1"></i>小红书：浩坤湖环湖自驾+日落最佳观赏点
+                            <a href="https://uri.amap.com/navigation?to=106.42763,23.13457,靖西浩坤湖&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                <i class="fa fa-map-marker mr-1"></i>导航去浩坤湖
+                            </a>
+                            <a href="https://www.xiaohongshu.com/search?keyword=靖西浩坤湖环湖自驾" class="text-xs text-primary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书攻略
                             </a>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/marker?position=106.42763,23.13457&name=靖西怡程酒店&src=webapp&coordinate=gaode&callnative=0" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=106.42763,23.13457,靖西怡程酒店&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>靖西怡程酒店（近锦绣古镇，交通便利）
                             </a>
                         </div>
                         <!-- 美食 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食推荐</p>
                             <p class="text-sm">主山街老字号卷筒粉：肉沫木耳卷筒粉 | 旧州老街酸嘢摊：芒果酸</p>
-                            <a href="https://m.dianping.com/search/category/靖西/美食/卷筒粉" class="text-xs text-secondary mr-2" target="_blank">
-                                <i class="fa fa-search mr-1"></i>卷筒粉
+                            <a href="https://www.xiaohongshu.com/search?keyword=靖西卷筒粉" class="text-xs text-secondary mr-2" target="_blank">
+                                <i class="fa fa-link mr-1"></i>卷筒粉
                             </a>
-                            <a href="https://m.dianping.com/search/category/靖西/美食/酸嘢" class="text-xs text-secondary" target="_blank">
-                                <i class="fa fa-search mr-1"></i>酸嘢
+                            <a href="https://www.xiaohongshu.com/search?keyword=靖西酸嘢" class="text-xs text-secondary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>酸嘢
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- D8：靖西→南宁（277km/3h） -->
+            <!-- D8：靖西→南宁 -->
             <div class="bg-white rounded-2xl card-shadow overflow-hidden mb-6">
                 <div class="bg-primary/10 px-5 py-3 flex items-center">
                     <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mr-3">D8</span>
@@ -456,46 +475,47 @@
                 </div>
                 <div class="p-5">
                     <img src="https://aka.doubaocdn.com/s/rLBC1wKvTT" alt="通灵大峡谷瀑布" class="w-full h-48 object-cover rounded-xl mb-4">
-                    <!-- 当日路线地图 -->
-                    <div class="rounded-xl overflow-hidden map-height mb-4 bg-gray-100 flex items-center justify-center" id="day8Map">
-                        <div class="text-center text-gray-500 text-sm" id="day8MapTip">
-                            <i class="fa fa-spinner fa-spin mr-2"></i>地图加载中...
+                    <a href="https://uri.amap.com/navigation?to=108.31664,22.82403,南宁火车站&via=106.42763,23.13457,靖西通灵大峡谷&callnative=1&src=桂西自驾攻略" class="block rounded-xl overflow-hidden map-height mb-4 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center hover:from-red-100 hover:to-red-200 transition-colors" target="_blank">
+                        <div class="text-center text-red-600">
+                            <i class="fa fa-flag-checkered fa-3x mb-2"></i>
+                            <p class="font-medium">点击规划最后一天</p>
+                            <p class="text-xs mt-1">先去通灵大峡谷，再到南宁</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="space-y-4">
-                        <!-- 景点（小红书攻略） -->
+                        <!-- 景点 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-camera text-accent mr-1"></i> 今日景点（附攻略）</p>
                             <p class="text-sm">通灵大峡谷/古龙山大峡谷（二选一，5月初漂流较冷，建议选峡谷徒步），途径合那高速（最美高速）</p>
-                            <a href="https://www.xiaohongshu.com/search?q=靖西通灵大峡谷徒步攻略&page=1" class="text-xs text-primary mt-1 inline-block" target="_blank">
-                                <i class="fa fa-link mr-1"></i>小红书：通灵大峡谷徒步路线+体力分配建议
+                            <a href="https://uri.amap.com/navigation?to=106.42763,23.13457,靖西通灵大峡谷&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mr-2" target="_blank">
+                                <i class="fa fa-map-marker mr-1"></i>导航去通灵大峡谷
+                            </a>
+                            <a href="https://www.xiaohongshu.com/search?keyword=靖西通灵大峡谷徒步" class="text-xs text-primary" target="_blank">
+                                <i class="fa fa-link mr-1"></i>小红书攻略
                             </a>
                         </div>
-                        <!-- 住宿（可跳转高德） -->
+                        <!-- 住宿 -->
                         <div>
                             <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-bed text-primary mr-1"></i> 推荐住宿（可导航）</p>
-                            <a href="https://uri.amap.com/marker?position=108.31664,22.82403&name=南宁火车站附近酒店&src=webapp&coordinate=gaode&callnative=0" 
-                               class="text-sm text-primary" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=108.31664,22.82403,南宁火车站附近酒店&callnative=1&src=桂西自驾攻略" class="text-sm text-primary" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>南宁火车站/机场附近酒店（方便返程）
                             </a>
                         </div>
                         <!-- 美食+夜市 -->
                         <div>
-                            <p class="text-xs text-gray-500 mb-1 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食+夜市推荐</p>
+                            <p class="text-xs text-gray-500 mb-2 flex items-center"><i class="fa fa-cutlery text-secondary mr-1"></i> 美食+夜市推荐</p>
                             <p class="text-sm">老六小炒：紫苏炒鱼杂 | 舒记粉店：老友牛肉粉</p>
-                            <a href="https://m.dianping.com/search/category/南宁/美食/老六小炒" class="text-xs text-secondary mr-2" target="_blank">
-                                <i class="fa fa-search mr-1"></i>老六小炒
+                            <a href="https://www.xiaohongshu.com/search?keyword=南宁老六小炒" class="text-xs text-secondary mr-2" target="_blank">
+                                <i class="fa fa-link mr-1"></i>老六小炒
                             </a>
-                            <a href="https://m.dianping.com/search/category/南宁/美食/舒记粉店" class="text-xs text-secondary mr-2" target="_blank">
-                                <i class="fa fa-search mr-1"></i>舒记粉店
+                            <a href="https://www.xiaohongshu.com/search?keyword=南宁舒记粉店" class="text-xs text-secondary mr-2" target="_blank">
+                                <i class="fa fa-link mr-1"></i>舒记粉店
                             </a>
                             <p class="text-sm mt-2 font-medium">南宁夜市推荐：</p>
-                            <a href="https://uri.amap.com/navigation?to=108.31758,22.82547,南宁中山路夜市&callnative=1&src=桂西自驾攻略" 
-                               class="text-xs text-primary mt-1 inline-block mr-2" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=108.31758,22.82547,南宁中山路夜市&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mt-1 inline-block mr-2" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>中山路夜市
                             </a>
-                            <a href="https://uri.amap.com/navigation?to=108.34156,22.81673,南宁建政路夜市&callnative=1&src=桂西自驾攻略" 
-                               class="text-xs text-primary mt-1 inline-block" target="_blank">
+                            <a href="https://uri.amap.com/navigation?to=108.34156,22.81673,南宁建政路夜市&callnative=1&src=桂西自驾攻略" class="text-xs text-primary mt-1 inline-block" target="_blank">
                                 <i class="fa fa-map-marker mr-1"></i>建政路夜市
                             </a>
                         </div>
@@ -527,7 +547,7 @@
                         </div>
                         <div class="ml-3">
                             <p class="font-medium text-sm">门票预约</p>
-                            <p class="text-xs text-gray-600 mt-1">三门海（提前3天抢）、天坑速降（提前1天）、程阳八寨（提前1天），推荐用“美团/大众点评/景区公众号”预定。</p>
+                            <p class="text-xs text-gray-600 mt-1">三门海（提前3天抢）、天坑速降（提前1天）、程阳八寨（提前1天），推荐用"美团/大众点评/景区公众号"预定。</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -536,7 +556,7 @@
                         </div>
                         <div class="ml-3">
                             <p class="font-medium text-sm">工具准备</p>
-                            <p class="text-xs text-gray-600 mt-1">手机提前下载“高德地图”离线包（部分山区信号弱），保存本攻略HTML到手机（避免联网问题）。</p>
+                            <p class="text-xs text-gray-600 mt-1">手机提前下载"高德地图"离线包（部分山区信号弱），保存本攻略到手机（避免联网问题）。</p>
                         </div>
                     </div>
                 </div>
@@ -550,208 +570,11 @@
         </footer>
     </main>
 
-    <!-- 高德地图初始化脚本（完整修复，所有地图均可加载） -->
+    <!-- 平滑滚动 -->
     <script>
-        // 地图加载成功后隐藏“加载中”提示
-        function hideMapTip(tipId) {
-            const tipElem = document.getElementById(tipId);
-            if (tipElem) tipElem.remove();
-        }
-
-        // 1. 总路线地图（桂林→三江→罗城→凤山→乐业→靖西→南宁）
-        try {
-            var totalMap = new AMap.Map('totalRouteMap', {
-                zoom: 7,
-                center: [108.0, 24.5], // 广西中部中心点，确保全路线可见
-                resizeEnable: true
-            });
-            // 总路线途经点（精准经纬度）
-            var totalPath = [
-                [110.287478, 25.28024], // 桂林
-                [109.56432, 25.73158],  // 三江
-                [109.07421, 25.09836],  // 罗城
-                [107.02457, 24.55689],  // 凤山
-                [106.56872, 24.74135],  // 乐业
-                [106.42763, 23.13457],  // 靖西
-                [108.31664, 22.82403]   // 南宁
-            ];
-            // 绘制总路线（蓝色实线，清晰可见）
-            var totalPolyline = new AMap.Polyline({
-                path: totalPath,
-                strokeColor: '#2563eb',
-                strokeWeight: 4,
-                strokeOpacity: 0.8,
-                strokeStyle: 'solid'
-            });
-            totalPolyline.setMap(totalMap);
-            // 添加途经点标记（红色标记，带名称）
-            totalPath.forEach((pos, index) => {
-                var nameList = ['桂林', '三江', '罗城', '凤山', '乐业', '靖西', '南宁'];
-                new AMap.Marker({
-                    position: pos,
-                    title: nameList[index],
-                    map: totalMap,
-                    icon: new AMap.Icon({
-                        size: new AMap.Size(24, 24),
-                        image: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png' // 红色标记图标
-                    })
-                });
-            });
-            hideMapTip('totalMapTip'); // 加载成功，隐藏提示
-        } catch (e) {
-            document.getElementById('totalMapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 2. D1：桂林市区地图（东西巷→两江四湖）
-        try {
-            var day1Map = new AMap.Map('day1Map', { 
-                zoom: 13, 
-                center: [110.28673, 25.27891], // 桂林市区中心
-                resizeEnable: true 
-            });
-            var day1Path = [[110.28845, 25.27936], [110.28321, 25.27658]]; // 东西巷→两江四湖
-            new AMap.Polyline({ 
-                path: day1Path, 
-                strokeColor: '#2563eb', 
-                strokeWeight: 3, 
-                map: day1Map 
-            });
-            new AMap.Marker({ position: [110.28845, 25.27936], title: '东西巷', map: day1Map });
-            new AMap.Marker({ position: [110.28321, 25.27658], title: '两江四湖', map: day1Map });
-            hideMapTip('day1MapTip');
-        } catch (e) {
-            document.getElementById('day1MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 3. D2：桂林→三江地图
-        try {
-            var day2Map = new AMap.Map('day2Map', { 
-                zoom: 9, 
-                center: [109.925, 25.5], // 桂林-三江中间点
-                resizeEnable: true 
-            });
-            var day2Path = [[110.287478, 25.28024], [109.56432, 25.73158]]; // 桂林→三江
-            new AMap.Polyline({ path: day2Path, strokeColor: '#2563eb', strokeWeight: 3, map: day2Map });
-            new AMap.Marker({ position: [110.287478, 25.28024], title: '桂林', map: day2Map });
-            new AMap.Marker({ position: [109.56432, 25.73158], title: '三江程阳八寨', map: day2Map });
-            hideMapTip('day2MapTip');
-        } catch (e) {
-            document.getElementById('day2MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 4. D3：三江→罗城地图
-        try {
-            var day3Map = new AMap.Map('day3Map', { 
-                zoom: 9, 
-                center: [109.32, 25.41], // 三江-罗城中间点
-                resizeEnable: true 
-            });
-            var day3Path = [[109.56432, 25.73158], [109.07421, 25.09836]]; // 三江→罗城
-            new AMap.Polyline({ path: day3Path, strokeColor: '#2563eb', strokeWeight: 3, map: day3Map });
-            new AMap.Marker({ position: [109.56432, 25.73158], title: '三江', map: day3Map });
-            new AMap.Marker({ position: [109.07421, 25.09836], title: '罗城崖宜古村', map: day3Map });
-            hideMapTip('day3MapTip');
-        } catch (e) {
-            document.getElementById('day3MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 5. D4：罗城→凤山地图
-        try {
-            var day4Map = new AMap.Map('day4Map', { 
-                zoom: 8, 
-                center: [108.05, 24.82], // 罗城-凤山中间点
-                resizeEnable: true 
-            });
-            var day4Path = [[109.07421, 25.09836], [107.02457, 24.55689]]; // 罗城→凤山
-            new AMap.Polyline({ path: day4Path, strokeColor: '#2563eb', strokeWeight: 3, map: day4Map });
-            new AMap.Marker({ position: [109.07421, 25.09836], title: '罗城', map: day4Map });
-            new AMap.Marker({ position: [107.02457, 24.55689], title: '凤山棉花天坑', map: day4Map });
-            hideMapTip('day4MapTip');
-        } catch (e) {
-            document.getElementById('day4MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 6. D5：凤山→乐业地图
-        try {
-            var day5Map = new AMap.Map('day5Map', { 
-                zoom: 10, 
-                center: [106.79, 24.65], // 凤山-乐业中间点
-                resizeEnable: true 
-            });
-            var day5Path = [[107.02457, 24.55689], [106.56872, 24.74135]]; // 凤山→乐业
-            new AMap.Polyline({ path: day5Path, strokeColor: '#2563eb', strokeWeight: 3, map: day5Map });
-            new AMap.Marker({ position: [107.02457, 24.55689], title: '凤山三门海', map: day5Map });
-            new AMap.Marker({ position: [106.56872, 24.74135], title: '乐业', map: day5Map });
-            hideMapTip('day5MapTip');
-        } catch (e) {
-            document.getElementById('day5MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 7. D6：乐业大石围天坑地图
-        try {
-            var day6Map = new AMap.Map('day6Map', { 
-                zoom: 12, 
-                center: [106.57015, 24.74328], // 大石围天坑附近
-                resizeEnable: true 
-            });
-            new AMap.Marker({ position: [106.57015, 24.74328], title: '大石围天坑', map: day6Map });
-            new AMap.Marker({ position: [106.56921, 24.74215], title: '1466帐篷营地', map: day6Map });
-            hideMapTip('day6MapTip');
-        } catch (e) {
-            document.getElementById('day6MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 8. D7：乐业→靖西地图
-        try {
-            var day7Map = new AMap.Map('day7Map', { 
-                zoom: 8, 
-                center: [106.5, 23.94], // 乐业-靖西中间点
-                resizeEnable: true 
-            });
-            var day7Path = [[106.56872, 24.74135], [106.42763, 23.13457]]; // 乐业→靖西
-            new AMap.Polyline({ path: day7Path, strokeColor: '#2563eb', strokeWeight: 3, map: day7Map });
-            new AMap.Marker({ position: [106.56872, 24.74135], title: '乐业', map: day7Map });
-            new AMap.Marker({ position: [106.42763, 23.13457], title: '靖西浩坤湖', map: day7Map });
-            hideMapTip('day7MapTip');
-        } catch (e) {
-            document.getElementById('day7MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 9. D8：靖西→南宁地图
-        try {
-            var day8Map = new AMap.Map('day8Map', { 
-                zoom: 8, 
-                center: [107.37, 22.98], // 靖西-南宁中间点
-                resizeEnable: true 
-            });
-            var day8Path = [[106.42763, 23.13457], [108.31664, 22.82403]]; // 靖西→南宁
-            new AMap.Polyline({ path: day8Path, strokeColor: '#2563eb', strokeWeight: 3, map: day8Map });
-            new AMap.Marker({ position: [106.42763, 23.13457], title: '靖西通灵大峡谷', map: day8Map });
-            new AMap.Marker({ position: [108.31664, 22.82403], title: '南宁', map: day8Map });
-            hideMapTip('day8MapTip');
-        } catch (e) {
-            document.getElementById('day8MapTip').innerHTML = 
-                '<i class="fa fa-exclamation-circle mr-2"></i>地图加载失败，可直接用住宿链接导航';
-        }
-
-        // 平滑滚动（点击导航栏可快速跳转）
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-</body>
-</html>
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
